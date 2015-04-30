@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/com.kfb.c.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/asmack-jse-buddycloud-2010.12.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/ksoap2-android-assembly-3.3.0-jar-with-dependencies.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/android-support-v13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/Baidu-Frontia-Android-2.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/com.kfb.a.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

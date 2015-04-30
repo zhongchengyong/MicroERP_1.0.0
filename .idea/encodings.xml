@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/com/example/MicroERP_1_0_0/MyActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/microerp/scm/activity/SCMFragment.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/microerp/scm/activity/qinggou.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/microerp/scm/activity/qinggouAdd.java" charset="UTF-8" />
+  </component>
+</project>
