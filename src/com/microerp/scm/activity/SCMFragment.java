@@ -48,6 +48,7 @@ public class SCMFragment extends AbFragment{
 
         //View view=inflater.inflate(R.layout.scmfragment, null);
         gridView= (GridView) rootview.findViewById(R.id.gridView1);
+        mAbPullToRefreshView = (AbPullToRefreshView)rootview.findViewById(R.id.mPullRefreshView);
         ArrayList al=new ArrayList();
         HashMap hs1=new HashMap();
         hs1.put("itemImage", R.drawable.app_f);

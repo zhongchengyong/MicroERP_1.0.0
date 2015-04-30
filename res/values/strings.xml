@@ -84,8 +84,8 @@
 	      同时我们将APP源码上传到Github中，希望更多有兴趣的开发者加入进来，共同完善MicroERP软件。
         最后感谢我们的指导老师焦贤沛老师，感谢他一直以来的指导和帮助。非常感谢。
 	   \n
-       \n\t\t官方主页：www.amsoft.cn
-       \n\t\t交流QQ群：38535812
+       \n\t\tGit仓库：https://github.com/giticaniup/MicroERP_1.0.0.git
+       \n\t\t交流QQ：1294699769
     </string>
     
     <string name="date_picker">年月日：</string>

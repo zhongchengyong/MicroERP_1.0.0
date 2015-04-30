@@ -49,27 +49,27 @@ public class MoreFragment extends AbFragment{
         ArrayList al=new ArrayList();
         HashMap hs1=new HashMap();
         hs1.put("itemImage", R.drawable.app_f);
-        hs1.put("itemText", "ÖÇÄÜËÑË÷");
+        hs1.put("itemText", "æ™ºèƒ½æœç´¢");
         al.add(hs1);
         HashMap hs2=new HashMap();
         hs2.put("itemImage", R.drawable.app_f);
-        hs2.put("itemText", "Ìá½»½¨Òé");
+        hs2.put("itemText", "æäº¤å»ºè®®");
         al.add(hs2);
 //        HashMap hs3=new HashMap();
 //        hs3.put("itemImage", R.drawable.app_f);
-//        hs3.put("itemText", "µ½ »õ");
+//        hs3.put("itemText", "ï¿½ï¿½ ï¿½ï¿½");
 //        al.add(hs3);
 //        HashMap hs4=new HashMap();
 //        hs4.put("itemImage", R.drawable.app_f);
-//        hs4.put("itemText", "Èë ¿â");
+//        hs4.put("itemText", "ï¿½ï¿½ ï¿½ï¿½");
 //        al.add(hs4);
 //        HashMap hs5=new HashMap();
 //        hs5.put("itemImage", R.drawable.app_f);
-//        hs5.put("itemText", "³ö¿âÉêÇë");
+//        hs5.put("itemText", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 //        al.add(hs5);
 //        HashMap hs6=new HashMap();
 //        hs6.put("itemImage", R.drawable.app_f);
-//        hs6.put("itemText", "³ö¿â");
+//        hs6.put("itemText", "ï¿½ï¿½ï¿½ï¿½");
 //        al.add(hs6);
 
         SimpleAdapter adpter = new SimpleAdapter(this.getActivity(),
@@ -109,7 +109,7 @@ public class MoreFragment extends AbFragment{
                 }
             }
         });
-//        //ÉèÖÃÏÂÀ­Ë¢ĞÂ¼àÌıÆ÷
+//        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¢ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½
 //        mAbPullToRefreshView.setOnHeaderRefreshListener(new AbPullToRefreshView.OnHeaderRefreshListener() {
 //
 //            @Override
@@ -120,16 +120,16 @@ public class MoreFragment extends AbFragment{
         return rootview;
     }
     /**
-     * ÏÂÔØÊı¾İ
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      */
     public void refreshTask() {
         currentPage = 1;
-        // °ó¶¨²ÎÊı
+        // ï¿½ó¶¨²ï¿½ï¿½ï¿½
         AbRequestParams params = new AbRequestParams();
         params.put("cityCode", "11");
         params.put("pageSize", String.valueOf(pageSize));
         params.put("toPageNo",String.valueOf(currentPage));
-        // ÏÂÔØÍøÂçÊı¾İ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         NetworkWeb web = NetworkWeb.newInstance(mActivity);
         web.findLogList(params, new AbHttpListener(){
 
@@ -143,12 +143,12 @@ public class MoreFragment extends AbFragment{
                 }
                 mAbPullToRefreshView.onHeaderRefreshFinish();
 
-                //Ä£ÄâÓÃ£¬ÕæÊÇ¿ª·¢ÖĞĞèÒªÖ±½Óµ÷ÓÃrunÄÚµÄÄÚÈİ
+                //Ä£ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒªÖ±ï¿½Óµï¿½ï¿½ï¿½runï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½
                 new Handler().postDelayed(new Runnable(){
 
                     @Override
                     public void run() {
-                        //ÏÔÊ¾ÄÚÈİ
+                        //ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
                         showContentView();
                     }
 
@@ -159,7 +159,7 @@ public class MoreFragment extends AbFragment{
             @Override
             public void onFailure(String content) {
                 AbToastUtil.showToast(mActivity, content);
-                //ÏÔÊ¾ÖØÊÔµÄ¿ò
+                //ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ÔµÄ¿ï¿½
                 showRefreshView();
             }
 

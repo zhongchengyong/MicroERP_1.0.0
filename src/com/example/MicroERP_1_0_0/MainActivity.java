@@ -11,6 +11,7 @@ import com.ab.view.sliding.AbBottomTabView;
 import com.ab.view.slidingmenu.SlidingMenu;
 import com.ab.view.titlebar.AbTitleBar;
 import com.andbase.main.MainMenuFragment;
+import com.microerp.scm.activity.AboutFragment;
 import com.microerp.scm.activity.HRFragment;
 import com.microerp.scm.activity.MoreFragment;
 import com.microerp.scm.activity.SCMFragment;
@@ -94,7 +95,7 @@ public class MainActivity extends AbActivity {
         SCMFragment page1 = new SCMFragment();
         HRFragment page2 = new HRFragment();
         MoreFragment page3=new MoreFragment();
-        SCMFragment page4 = new SCMFragment();
+        AboutFragment page4=new AboutFragment();
 //        FragmentLoad page2 = new FragmentLoad();
 //        FragmentRefresh page3 = new FragmentRefresh();
 //        FragmentLoad page4 = new FragmentLoad();
