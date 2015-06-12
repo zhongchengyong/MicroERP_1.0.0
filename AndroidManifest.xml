@@ -13,7 +13,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    　　  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -71,6 +71,7 @@
         <activity android:name="com.microerp.scm.activity.ruku"></activity>
         <activity android:name="com.microerp.scm.activity.chukushenqing"></activity>
         <activity android:name="com.microerp.scm.activity.chuku"></activity>
+        <activity android:name="com.goodtime.about.auditAdvise"></activity>
 
         <!-- push service client -->
         <receiver android:name="com.andbase.im.receiver.IMMessageReceiver">

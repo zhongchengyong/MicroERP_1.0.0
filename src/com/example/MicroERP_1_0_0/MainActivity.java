@@ -1,6 +1,7 @@
 package com.example.MicroERP_1_0_0;
 
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -11,6 +12,7 @@ import com.ab.view.sliding.AbBottomTabView;
 import com.ab.view.slidingmenu.SlidingMenu;
 import com.ab.view.titlebar.AbTitleBar;
 import com.andbase.main.MainMenuFragment;
+import com.goodtime.about.auditAdvise;
 import com.microerp.scm.activity.AboutFragment;
 import com.microerp.scm.activity.HRFragment;
 import com.microerp.scm.activity.MoreFragment;
@@ -35,6 +37,7 @@ public class MainActivity extends AbActivity {
         AbTitleBar mAbTitleBar = this.getTitleBar();
         mAbTitleBar.setTitleText(R.string.tab_bottom_name);
         mAbTitleBar.setLogo(R.drawable.button_selector_menu);
+        mAbTitleBar.setLogo2(R.drawable.button_more);
         mAbTitleBar.setTitleBarBackground(R.drawable.top_bg);
         mAbTitleBar.setTitleTextMargin(10, 0, 0, 0);
         mAbTitleBar.setLogoLine(R.drawable.line);
@@ -70,7 +73,13 @@ public class MainActivity extends AbActivity {
             }
         });
 
-
+        mAbTitleBar.getLogoView2().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent adviseintent=new Intent(MainActivity.this,auditAdvise.class);
+                startActivity(adviseintent);
+            }
+        });
         mBottomTabView = (AbBottomTabView) findViewById(R.id.mBottomTabView);
 
         //如果里面的页面列表不能下载原因：

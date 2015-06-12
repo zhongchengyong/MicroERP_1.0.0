@@ -26,32 +26,32 @@ import java.util.List;
 public class caigou extends AbActivity {
 
     private MyApplication application;
-    //ÁĞ±íÊÊÅäÆ÷
+    //åˆ—è¡¨é€‚é…å™¨
     private PraybillAdapter myListViewAdapter = null;
-    //ÁĞ±íÊı¾İ
+    //åˆ—è¡¨æ•°æ®
     private List praybilllist = null;
     private ListView mListView = null;
-    //¶¨ÒåÊı¾İ¿â²Ù×÷ÊµÏÖÀà
+    //å®šä¹‰æ•°æ®åº“æ“ä½œå®ç°ç±»
     private Praybill praybillDao = null;
 
-    //Ã¿Ò»Ò³ÏÔÊ¾µÄĞĞÊı
+    //æ¯ä¸€é¡µæ˜¾ç¤ºçš„è¡Œæ•°
     public int pageSize = 10;
-    //µ±Ç°Ò³Êı
+    //å½“å‰é¡µæ•°
     public int pageNum = 1;
-    //×ÜÌõÊı
+    //æ€»æ¡æ•°
     public int totalCount = 0;
-    //·ÖÒ³À¸
+    //åˆ†é¡µæ 
     private LinearLayout mListViewForPage;
-    //×ÜÌõÊıºÍµ±Ç°ÏÔÊ¾µÄ¼¸Ò³
+    //æ€»æ¡æ•°å’Œå½“å‰æ˜¾ç¤ºçš„å‡ é¡µ
     public TextView total, current;
-    //ÉÏÒ»Ò³ºÍÏÂÒ»Ò³µÄ°´Å¥
+    //ä¸Šä¸€é¡µå’Œä¸‹ä¸€é¡µçš„æŒ‰é’®
     private Button preView,nextView;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setAbContentView(R.layout.scm_qinggou);
         AbTitleBar mTittleBar=this.getTitleBar();
-        mTittleBar.setTitleText("Çë¹ºµ¥");
+        mTittleBar.setTitleText("é‡‡è´­è®¢å•");
         mTittleBar.setLogo(R.drawable.button_selector_back);
         mTittleBar.setTitleBarBackground(R.drawable.top_bg);
         mTittleBar.setTitleTextMargin(10, 0, 0, 0);
@@ -67,41 +67,41 @@ public class caigou extends AbActivity {
         });
         praybillDao=new Praybill(caigou.this);
 
-        //»ñÈ¡Êı¾İ¿âÁ¬½Ó
+        //è·å–æ•°æ®åº“è¿æ¥
         praybillDao.startReadableDatabase();
-        //²éÑ¯Êı¾İ±£´æµ½praybilllistÖĞ
+        //æŸ¥è¯¢æ•°æ®ä¿å­˜åˆ°praybilllistä¸­
         praybilllist=praybillDao.queryList(null, null, null, null, null, "createtime desc limit "+
                 String.valueOf(pageSize)+ " offset " +0, null);
         totalCount=praybillDao.queryCount(null, null);
-        //¹Ø±ÕÊı¾İ¿âÁ¬½Ó
+        //å…³é—­æ•°æ®åº“è¿æ¥
         praybillDao.closeDatabase();
 
-        //»ñÈ¡ListView¶ÔÏó
+        //è·å–ListViewå¯¹è±¡
         mListView = (ListView)this.findViewById(R.id.mListView);
-        //·ÖÒ³À¸
+        //åˆ†é¡µæ 
         mListViewForPage = (LinearLayout) this.findViewById(R.id.mListViewForPage);
-        //ÉÏÒ»Ò³ºÍÏÂÒ»Ò³µÄ°´Å¥
+        //ä¸Šä¸€é¡µå’Œä¸‹ä¸€é¡µçš„æŒ‰é’®
         preView = (Button) this.findViewById(R.id.preView);
         nextView = (Button) this.findViewById(R.id.nextView);
-        //·ÖÒ³À¸ÏÔÊ¾µÄÎÄ±¾
+        //åˆ†é¡µæ æ˜¾ç¤ºçš„æ–‡æœ¬
         total = (TextView)findViewById(R.id.total);
         current = (TextView)findViewById(R.id.current);
-        //Êı¾İÆ¥ÅäÒ»¸öÊÊÅäÆ÷£¬²¢½«listviewÆ¥ÅäÊÊÅäÆ÷
+        //æ•°æ®åŒ¹é…ä¸€ä¸ªé€‚é…å™¨ï¼Œå¹¶å°†listviewåŒ¹é…é€‚é…å™¨
         myListViewAdapter=new PraybillAdapter(this,praybilllist);
         mListView.setAdapter(myListViewAdapter);
 
-        //ÉèÖÃÊÇ·ñÏÔÊ¾ListViewForPage
+        //è®¾ç½®æ˜¯å¦æ˜¾ç¤ºListViewForPage
         if(praybilllist==null || praybilllist.size()==0){
             mListViewForPage.setVisibility(View.GONE);
         }
         else{
-            total.setText("×ÜÌõÊı"+String.valueOf(totalCount));
-            current.setText("µ±Ç°Ò³"+String.valueOf(pageNum));
+            total.setText("æ€»æ¡æ•°"+String.valueOf(totalCount));
+            current.setText("å½“å‰é¡µ"+String.valueOf(pageNum));
             mListViewForPage.setVisibility(View.VISIBLE);
         }
 
 
-        //ÉÏÒ»Ò³ÊÂ¼ş
+        //ä¸Šä¸€é¡µäº‹ä»¶
         preView.setOnTouchListener(new Button.OnTouchListener(){
             @Override
             public boolean onTouch(View arg0, MotionEvent arg1){
@@ -122,7 +122,7 @@ public class caigou extends AbActivity {
             }
         });
 
-        //ÏÂÒ»Ò³ÊÂ¼ş
+        //ä¸‹ä¸€é¡µäº‹ä»¶
         nextView.setOnTouchListener(new Button.OnTouchListener() {
             @Override
             public boolean onTouch(View arg0, MotionEvent arg1) {
@@ -148,21 +148,21 @@ public class caigou extends AbActivity {
 
 
     /*
-     * ÉÏÒ»Ò³
+     * ä¸Šä¸€é¡µ
      */
     private void preView() {
         pageNum--;
-        current.setText("µ±Ç°Ò³:" + String.valueOf(pageNum));
+        current.setText("å½“å‰é¡µ:" + String.valueOf(pageNum));
         praybilllist.clear();
 
         queryData();
     }
     /*
-     * ÏÂÒ»Ò³
+     * ä¸‹ä¸€é¡µ
      */
     private void nextView() {
         pageNum++;
-        current.setText("µ±Ç°Ò³:" + String.valueOf(pageNum));
+        current.setText("å½“å‰é¡µ:" + String.valueOf(pageNum));
         praybilllist.clear();
 
         queryData();
@@ -170,7 +170,7 @@ public class caigou extends AbActivity {
 
     private void checkPageBar(){
         if(praybilllist == null || praybilllist.size()==0){
-            //ÎŞÊı¾İÒş²Ø·ÖÒ³À¸
+            //æ— æ•°æ®éšè—åˆ†é¡µæ 
             mListViewForPage.setVisibility(View.GONE);
         }else{
             queryDataCount();
@@ -179,16 +179,16 @@ public class caigou extends AbActivity {
 
     /**
      *
-     * ÃèÊö£º²éÑ¯Êı¾İ
+     * æè¿°ï¼šæŸ¥è¯¢æ•°æ®
      * @throws
      */
     public void queryData(){
-        //(1)»ñÈ¡Êı¾İ¿â
+        //(1)è·å–æ•°æ®åº“
         praybillDao.startReadableDatabase();
-        //(2)Ö´ĞĞ²éÑ¯
+        //(2)æ‰§è¡ŒæŸ¥è¯¢
         List ListNew = praybillDao.queryList(null, null, null, null, null, "create_time desc limit "+
                 String.valueOf(pageSize)+ " offset " +String.valueOf((pageNum-1)*pageSize), null);
-        //(3)¹Ø±ÕÊı¾İ¿â
+        //(3)å…³é—­æ•°æ®åº“
         praybillDao.closeDatabase();
 
         praybilllist.clear();
@@ -202,19 +202,19 @@ public class caigou extends AbActivity {
 
     /**
      *
-     * ÃèÊö£º²éÑ¯ÊıÁ¿
+     * æè¿°ï¼šæŸ¥è¯¢æ•°é‡
      * @throws
      */
     public void queryDataCount(){
-        //(1)»ñÈ¡Êı¾İ¿â
+        //(1)è·å–æ•°æ®åº“
         praybillDao.startReadableDatabase();
-        //(2)Ö´ĞĞ²éÑ¯
+        //(2)æ‰§è¡ŒæŸ¥è¯¢
         totalCount = praybillDao.queryCount(null, null);
-        //(3)¹Ø±ÕÊı¾İ¿â
+        //(3)å…³é—­æ•°æ®åº“
         praybillDao.closeDatabase();
 
-        total.setText("×ÜÌõÊı:" + String.valueOf(totalCount));
-        current.setText("µ±Ç°Ò³:" + String.valueOf(pageNum));
+        total.setText("æ€»æ¡æ•°:" + String.valueOf(totalCount));
+        current.setText("å½“å‰é¡µ:" + String.valueOf(pageNum));
         mListViewForPage.setVisibility(View.VISIBLE);
 
     }

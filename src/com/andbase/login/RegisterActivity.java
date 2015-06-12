@@ -13,6 +13,8 @@ import com.ab.activity.AbActivity;
 import com.ab.util.AbStrUtil;
 import com.ab.util.AbToastUtil;
 import com.ab.view.titlebar.AbTitleBar;
+import com.andbase.friend.UserDao;
+import com.andbase.model.User;
 import com.example.MicroERP_1_0_0.R;
 import com.andbase.global.MyApplication;
 
@@ -30,6 +32,8 @@ public class RegisterActivity extends AbActivity {
 	private ImageButton mClear3;
 	private ImageButton mClear4;
 	private AbTitleBar mAbTitleBar = null;
+	private UserDao userDao=null;
+	private User uservo;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -389,8 +393,17 @@ public class RegisterActivity extends AbActivity {
 			
 			
 			//showProgressDialog();
-			AbToastUtil.showToast(RegisterActivity.this,"演示界面,没什么用");
-			
+			userDao=new UserDao(RegisterActivity.this);
+			String uname= String.valueOf(userName.getText());
+			String upswd=String.valueOf(userPwd.getText());
+			uservo=new User();
+			uservo.setUserName(uname);
+			uservo.setPassword(upswd);
+			userDao.startWritableDatabase(true);
+			userDao.insert(uservo);
+			userDao.closeDatabase();
+			AbToastUtil.showToast(RegisterActivity.this, "注册成功！您的ID为"+uname);
+			finish();
 		}
 	}
    
